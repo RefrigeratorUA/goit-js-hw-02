@@ -1,18 +1,20 @@
-const ADMIN_PASSWORD = 'jqueryismyjam';
-let message;
+function findLongestWord(string = '') {
+  // Write code under this line
+  const stringToArray = string.split(' ');
+  let maxCharsInWord = stringToArray[0];
 
-const CANCELED_BY_USER = 'Отменено пользователем!';
-const ACCESS_IS_ALLOWED = 'Добро пожаловать!';
-const ACCESS_DENIED = 'Доступ запрещен, неверный пароль!';
+  for (const word of stringToArray) {
+    if (word.length > maxCharsInWord.length) maxCharsInWord = word;
+  }
 
-const userPassword = prompt('Введите пароль администратора:');
-
-if (userPassword === null) {
-  message = CANCELED_BY_USER;
-} else if (userPassword === ADMIN_PASSWORD) {
-  message = ACCESS_IS_ALLOWED;
-} else {
-  message = ACCESS_DENIED;
+  return maxCharsInWord;
 }
 
-alert(message);
+console.log(findLongestWord('The quick brown fox jumped over the lazy dog'));
+// 'jumped'
+
+console.log(findLongestWord('Google do a roll'));
+// 'Google'
+
+console.log(findLongestWord('May the force be with you'));
+// 'force'

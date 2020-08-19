@@ -1,11 +1,24 @@
-const name = 'Генератор защитного поля';
-let price = 1000;
-const firstMessage = `Выбран «${name}», цена за штуку ${price} кредитов`;
-price = 2000;
-const secondMessage = `Выбран «${name}», цена за штуку ${price} кредитов`;
+const getItemsString = function (array) {
+  // Write code under this line
+  let resultStr = '';
 
-console.log('Задание 1: ', firstMessage);
-// 'Выбран «Генератор защитного поля», цена за штуку 1000 кредитов'
+  for (let i = 0; i < array.length; i += 1) {
+    const result = `${i + 1} - ${array[i]}\n`;
+    resultStr += result;
+  }
 
-console.log('Задание 1: ', secondMessage);
-// 'Выбран «Генератор защитного поля», цена за штуку 2000 кредитов'
+  return resultStr;
+};
+
+console.log(getItemsString(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']));
+console.log(getItemsString([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]));
+
+/*
+'1 - Mango
+2 - Poly
+3 - Ajax
+4 - Lux
+5 - Jay
+6 - Kong
+'
+*/

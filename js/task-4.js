@@ -1,21 +1,15 @@
-const orderPieces = Number.parseInt(prompt('Введите количество дроидов:'));
+function formatString(string, maxLength = 40) {
+  // Write code under this line
+  if (string.length <= maxLength) return string;
 
-const credits = 23580;
-const pricePerDroid = 3000;
-const CANCELED_BY_USER = 'Отменено пользователем!';
-const ACCESS_DENIED = 'Недостаточно средств на счету!';
-
-let totalPrice = orderPieces !== null || orderPieces !== 0 ? orderPieces * pricePerDroid : 0;
-let balanceCredit = credits - totalPrice;
-let message;
-
-// Write code under this line
-if (orderPieces === null) {
-  message = 'Отменено пользователем!';
-} else if (balanceCredit >= 0) {
-  message = `Вы купили ${orderPieces} дроидов, на счету осталось ${balanceCredit} кредитов`;
-} else {
-  message = 'Недостаточно средств на счету!';
+  return string.slice(0, maxLength) + '...';
 }
 
-console.log('Задание 4: ', message);
+console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
+// 'Curabitur ligula sapien, tincidunt non.'
+
+console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
+// 'Vestibulum facilisis, purus nec pulvinar...'
+
+console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.', 30));
+// 'Vestibulum facilisis, purus ne...'
