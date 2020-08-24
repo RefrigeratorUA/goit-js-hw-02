@@ -1,8 +1,5 @@
 function formatString(string, maxLength = 40) {
-  // Write code under this line
-  if (string.length <= maxLength) return string;
-
-  return string.slice(0, maxLength) + '...';
+  return string.length <= maxLength ? string : string.slice(0, maxLength) + '...';
 }
 
 console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
